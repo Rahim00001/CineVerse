@@ -1,12 +1,16 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const MovieCard = ({ movie }) => {
-    const { movietitle, moviemainphotos } = movie;
+    const { movietitle, moviemainphotos, imdbmovieid } = movie;
     return (
-        <div className="mb-4">
-            <img src={moviemainphotos} alt="movieImg" />
-            <h2 className="whitespace-nowrap overflow-hidden text-ellipsis">{movietitle}</h2>
-        </div>
+        <Link to={`/movie/${imdbmovieid}`}>
+            <div className="group hover:scale-105 transition-transform duration-300">
+                <img src={moviemainphotos} alt="movieImg" className="rounded-md" />
+                <h2 className="whitespace-nowrap overflow-hidden text-ellipsis">{movietitle}</h2>
+            </div>
+        </Link>
     );
 };
 

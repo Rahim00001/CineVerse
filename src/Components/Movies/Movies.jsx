@@ -13,14 +13,18 @@ const Movies = () => {
     }, [])
 
     return (
-        <div>
+        <div className="px-2 mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6  mx-auto max-w-screen-2xl">
                 {
-                    movies.slice(0, moviesLength).map(movie => <MovieCard key={movie.title} movie={movie}></MovieCard>)
+                    movies.slice(0, moviesLength).map(movie => <MovieCard key={movie.imdbmovieid} movie={movie}></MovieCard>)
                 }
             </div>
             <div className={moviesLength === movies.length ? 'hidden' : 'flex justify-center'}>
-                <Button onClick={() => setMoviesLength(movies.length)} color="red" variant="gradient" className="">
+                <Button
+                    onClick={() => setMoviesLength(movies.length)}
+                    ripple={true}
+                    color="red"
+                    variant="gradient">
                     SEE All
                 </Button>
             </div>

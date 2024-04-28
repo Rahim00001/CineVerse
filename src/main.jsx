@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Main from './Layout/Main';
 import Home from './Components/Home/Home';
+import MovieDetiles from './Components/MovieDetiles/MovieDetiles';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/movie/:imdbmovieid",
+        element: <MovieDetiles></MovieDetiles>,
+        loader: () => fetch('../AllMovies.json')
       }
     ]
   },

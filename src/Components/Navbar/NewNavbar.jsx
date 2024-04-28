@@ -35,167 +35,8 @@ import {
     ScaleIcon,
     VideoCameraSlashIcon
 } from "@heroicons/react/24/outline";
-const languages = [
-    {
-        language: "Hindi",
-    },
-    {
-        language: "Malayalam",
-    },
-    {
-        language: "Kannada",
-    },
-    {
-        language: "Tamil",
-    },
-    {
-        language: "English",
-    },
-    {
-        language: "Japanese",
-    },
-    {
-        language: "Chinese",
-    },
-    {
-        language: "Spanish",
-    },
-    {
-        language: "Korean",
-    },
-    {
-        language: "Telugu",
-    },
-    {
-        language: "Bangali",
-    },
-    {
-        language: "Sinhala",
-    },
-    {
-        language: "Oriya",
-    },
-    {
-        language: "Assamese",
-    },
-    {
-        language: "Urdu",
-    },
-    {
-        language: "Kashmiri",
-    },
-    {
-        language: "Panjabi",
-    },
-    {
-        language: "Bhojpuri",
-    },
-    {
-        language: "Gujrati",
-    },
-    {
-        language: "Marathi",
-    },
-    {
-        language: "Portuguese",
-    },
-    {
-        language: "Turkish",
-    },
-    {
-        language: "Italian",
-    },
-    {
-        language: "Russian",
-    },
-    {
-        language: "Oriya",
-    },
-    {
-        language: "Rajasthani",
-    },
-    {
-        language: "Malayalam",
-    },
-    {
-        language: "Haryanvi",
-    },
-    {
-        language: "Swahili",
-    },
-];
-const countrys = [
-    {
-        name: "India",
-    },
-    {
-        name: "Bangladesh",
-    },
-    {
-        name: "South Korea",
-    },
-    {
-        name: "Japan",
-    },
-    {
-        name: "Turkey",
-    },
-    {
-        name: "United Kingdom",
-    },
-    {
-        name: "Spain",
-    },
-    {
-        name: "Canada",
-    },
-    {
-        name: "United States",
-    },
-    {
-        name: "France",
-    },
-    {
-        name: "Thailend",
-    },
-    {
-        name: "Singapore",
-    },
-    {
-        name: "Australia",
-    },
-    {
-        name: "Mexico",
-    },
-    {
-        name: "Indonesia",
-    },
-    {
-        name: "Sweden",
-    },
-    {
-        name: "Thailand",
-    },
-    {
-        name: "Portugal",
-    },
-    {
-        name: "Italy",
-    },
-    {
-        name: "Europe",
-    },
-    {
-        name: "Latin American",
-    },
-    {
-        name: "African",
-    },
-    {
-        name: "Arabian",
-    },
-
-];
+import languages from "../../../public/Languages.json"
+import countries from "../../../public/Countries.json"
 const geners = [
     {
         title: "Action",
@@ -283,93 +124,14 @@ const geners = [
         icon: CalendarDaysIcon,
     },
 ];
-
-// All Geners function
-function NavListMenu() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-    // All Genres
-    const renderItems = geners.map(
-        ({ icon, title, description }, key) => (
-            <a href="#" key={key}>
-                <MenuItem className="flex items-center gap-3 rounded-lg">
-                    <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
-                        {" "}
-                        {React.createElement(icon, {
-                            strokeWidth: 2,
-                            className: "h-6 text-gray-900 w-6",
-                        })}
-                    </div>
-                    <div>
-                        <Typography
-                            variant="h6"
-                            color="blue-gray"
-                            className="flex items-center text-sm font-bold"
-                        >
-                            {title}
-                        </Typography>
-                        <Typography
-                            variant="paragraph"
-                            className="text-xs !font-medium text-blue-gray-500"
-                        >
-                            {description}
-                        </Typography>
-                    </div>
-                </MenuItem>
-            </a>
-        ),
-    );
-
-    return (
-        <React.Fragment>
-            {/* Genres Dropdown */}
-            <Menu
-                open={isMenuOpen}
-                handler={setIsMenuOpen}
-                offset={{ mainAxis: 20 }}
-                placement="bottom"
-                allowHover={true}
-            >
-                <MenuHandler>
-                    <Typography as="div" variant="small" className="font-medium">
-                        <ListItem
-                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
-                            selected={isMenuOpen || isMobileMenuOpen}
-                            onClick={() => setIsMobileMenuOpen((cur) => !cur)}
-                        >
-                            Geners
-                            <ChevronDownIcon
-                                strokeWidth={2.5}
-                                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""
-                                    }`}
-                            />
-                            <ChevronDownIcon
-                                strokeWidth={2.5}
-                                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""
-                                    }`}
-                            />
-                        </ListItem>
-                    </Typography>
-                </MenuHandler>
-                <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
-                    <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
-                        {renderItems}
-                    </ul>
-                </MenuList>
-            </Menu>
-            <div className="block lg:hidden">
-                <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
-            </div>
-        </React.Fragment>
-    );
-}
+console.log(geners);
 
 // All Countries function
 function NavListMenu2() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     // All countrys
-    const renderItems = countrys.map(
+    const renderItems = countries.map(
         ({ name }, key) => (
             <a href="#" key={key}>
                 <MenuItem className="flex items-center gap-3 rounded-lg">
@@ -502,7 +264,6 @@ function NavList() {
     return (
         <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
             <NavListMenu3 />
-            <NavListMenu />
             <NavListMenu2 />
         </List>
     );
@@ -524,6 +285,8 @@ export function NavbarWithMegaMenu() {
             color="blue-gray"
             className="mx-auto max-w-screen-xl from-blue-gray-50 to-blue-gray-100 px-4 py-3"
         >
+
+            {/* navbar for bigger screen */}
             <div className="flex items-center justify-between text-blue-gray-900">
                 <Typography
                     as="a"
@@ -596,6 +359,8 @@ export function NavbarWithMegaMenu() {
                     )}
                 </IconButton>
             </div>
+
+            {/* navbar for smaller screen */}
             <Collapse open={openNav}>
                 <NavList />
                 <div className="items-center gap-x-2 flex mb-4">

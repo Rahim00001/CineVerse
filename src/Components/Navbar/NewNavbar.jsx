@@ -522,7 +522,7 @@ export function NavbarWithMegaMenu() {
         <Navbar
             variant="gradient"
             color="blue-gray"
-            className="mx-auto max-w-screen-xl from-blue-gray-200 to-blue-gray-300 px-4 py-3"
+            className="mx-auto max-w-screen-xl from-blue-gray-50 to-blue-gray-100 px-4 py-3"
         >
             <div className="flex items-center justify-between text-blue-gray-900">
                 <Typography

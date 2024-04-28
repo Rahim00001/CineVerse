@@ -11,6 +11,7 @@ import {
     MenuHandler,
     MenuList,
     MenuItem,
+    Input,
 } from "@material-tailwind/react";
 import {
     ChevronDownIcon,
@@ -34,92 +35,166 @@ import {
     ScaleIcon,
     VideoCameraSlashIcon
 } from "@heroicons/react/24/outline";
-const navListMenuItems = [
+const languages = [
     {
-        title: "Action",
-        description: "Exciting thrills and heart-pounding action.",
-        icon: BoltIcon,
+        language: "Hindi",
     },
     {
-        title: "Adventure",
-        description: "Explore new worlds and thrilling journeys.",
-        icon: GlobeAmericasIcon,
+        language: "Malayalam",
     },
     {
-        title: "Fantasy",
-        description: "Magical realms and mythical adventures.",
-        icon: SparklesIcon,
+        language: "Kannada",
     },
     {
-        title: "Romence",
-        description: "Heartfelt tales of love and connection.",
-        icon: HeartIcon,
+        language: "Tamil",
     },
     {
-        title: "Thriller",
-        description: "Suspenseful excitement and thrilling twists.",
-        icon: MagnifyingGlassIcon,
+        language: "English",
     },
     {
-        title: "Horror",
-        description: "Spine-chilling scares and terrifying tales.",
-        icon: VideoCameraSlashIcon,
+        language: "Japanese",
     },
     {
-        title: "Crime",
-        description: "Mystery-solving and thrilling investigations.",
-        icon: ScaleIcon,
+        language: "Chinese",
     },
     {
-        title: "Mystery",
-        description: "Enigmatic puzzles and gripping suspense.",
-        icon: QuestionMarkCircleIcon,
+        language: "Spanish",
     },
     {
-        title: "Drama",
-        description: "Emotional depth and compelling narratives.",
-        icon: FilmIcon,
+        language: "Korean",
     },
     {
-        title: "Animation",
-        description: "Vibrant characters and imaginative worlds.",
-        icon: Square3Stack3DIcon,
+        language: "Telugu",
     },
     {
-        title: "Documentary",
-        description: "Real-life stories and eye-opening insights.",
-        icon: NewspaperIcon,
+        language: "Bangali",
     },
     {
-        title: "Sport",
-        description: "Adrenaline-fueled action and athletic triumphs.",
-        icon: TrophyIcon,
+        language: "Sinhala",
     },
     {
-        title: "Sci-Fi",
-        description: "Futuristic adventures and mind-bending concepts.",
-        icon: RocketLaunchIcon,
+        language: "Oriya",
     },
     {
-        title: "Biography",
-        description: "Inspirational tales of real-life figures.",
-        icon: RadioIcon,
+        language: "Assamese",
     },
     {
-        title: "Comedy",
-        description: "Side-splitting laughter and feel-good humor.",
-        icon: GifIcon,
+        language: "Urdu",
     },
     {
-        title: "Family",
-        description: " Heartwarming stories for all ages to enjoy.",
-        icon: UserGroupIcon,
+        language: "Kashmiri",
     },
     {
-        title: "History",
-        description: "Journey into the past and uncover its secrets.",
-        icon: CalendarDaysIcon,
+        language: "Panjabi",
     },
+    {
+        language: "Bhojpuri",
+    },
+    {
+        language: "Gujrati",
+    },
+    {
+        language: "Marathi",
+    },
+    {
+        language: "Portuguese",
+    },
+    {
+        language: "Turkish",
+    },
+    {
+        language: "Italian",
+    },
+    {
+        language: "Russian",
+    },
+    {
+        language: "Oriya",
+    },
+    {
+        language: "Rajasthani",
+    },
+    {
+        language: "Malayalam",
+    },
+    {
+        language: "Haryanvi",
+    },
+    {
+        language: "Swahili",
+    },
+];
+const countrys = [
+    {
+        name: "India",
+    },
+    {
+        name: "Bangladesh",
+    },
+    {
+        name: "South Korea",
+    },
+    {
+        name: "Japan",
+    },
+    {
+        name: "Turkey",
+    },
+    {
+        name: "United Kingdom",
+    },
+    {
+        name: "Spain",
+    },
+    {
+        name: "Canada",
+    },
+    {
+        name: "United States",
+    },
+    {
+        name: "France",
+    },
+    {
+        name: "Thailend",
+    },
+    {
+        name: "Singapore",
+    },
+    {
+        name: "Australia",
+    },
+    {
+        name: "Mexico",
+    },
+    {
+        name: "Indonesia",
+    },
+    {
+        name: "Sweden",
+    },
+    {
+        name: "Thailand",
+    },
+    {
+        name: "Portugal",
+    },
+    {
+        name: "Italy",
+    },
+    {
+        name: "Europe",
+    },
+    {
+        name: "Latin American",
+    },
+    {
+        name: "African",
+    },
+    {
+        name: "Arabian",
+    },
+
 ];
 const geners = [
     {
@@ -209,6 +284,7 @@ const geners = [
     },
 ];
 
+// All Geners function
 function NavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -287,34 +363,23 @@ function NavListMenu() {
         </React.Fragment>
     );
 }
+
+// All Countries function
 function NavListMenu2() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-    // All Geners
-    const renderItems = navListMenuItems.map(
-        ({ icon, title, description }, key) => (
+    // All countrys
+    const renderItems = countrys.map(
+        ({ name }, key) => (
             <a href="#" key={key}>
                 <MenuItem className="flex items-center gap-3 rounded-lg">
-                    <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
-                        {" "}
-                        {React.createElement(icon, {
-                            strokeWidth: 2,
-                            className: "h-6 text-gray-900 w-6",
-                        })}
-                    </div>
                     <div>
                         <Typography
                             variant="h6"
                             color="blue-gray"
                             className="flex items-center text-sm font-bold"
                         >
-                            {title}
-                        </Typography>
-                        <Typography
-                            variant="paragraph"
-                            className="text-xs !font-medium text-blue-gray-500"
-                        >
-                            {description}
+                            {name}
                         </Typography>
                     </div>
                 </MenuItem>
@@ -324,7 +389,7 @@ function NavListMenu2() {
 
     return (
         <React.Fragment>
-            {/* Geners Dropdown */}
+            {/* Countrys Dropdown */}
             <Menu
                 open={isMenuOpen}
                 handler={setIsMenuOpen}
@@ -365,34 +430,23 @@ function NavListMenu2() {
         </React.Fragment>
     );
 }
+
+// All Languages function
 function NavListMenu3() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-    // All Geners
-    const renderItems = navListMenuItems.map(
-        ({ icon, title, description }, key) => (
+    // All languages
+    const renderItems = languages.map(
+        ({ language }, key) => (
             <a href="#" key={key}>
                 <MenuItem className="flex items-center gap-3 rounded-lg">
-                    <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
-                        {" "}
-                        {React.createElement(icon, {
-                            strokeWidth: 2,
-                            className: "h-6 text-gray-900 w-6",
-                        })}
-                    </div>
                     <div>
                         <Typography
                             variant="h6"
                             color="blue-gray"
                             className="flex items-center text-sm font-bold"
                         >
-                            {title}
-                        </Typography>
-                        <Typography
-                            variant="paragraph"
-                            className="text-xs !font-medium text-blue-gray-500"
-                        >
-                            {description}
+                            {language}
                         </Typography>
                     </div>
                 </MenuItem>
@@ -402,7 +456,7 @@ function NavListMenu3() {
 
     return (
         <React.Fragment>
-            {/* Geners Dropdown */}
+            {/* Languagess Dropdown */}
             <Menu
                 open={isMenuOpen}
                 handler={setIsMenuOpen}
@@ -447,31 +501,9 @@ function NavListMenu3() {
 function NavList() {
     return (
         <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-            {/* <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
-            </Typography> */}
-
             <NavListMenu3 />
             <NavListMenu />
             <NavListMenu2 />
-
-            {/* <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">
-                    Contact Us
-                </ListItem>
-            </Typography> */}
         </List>
     );
 }
@@ -487,7 +519,11 @@ export function NavbarWithMegaMenu() {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
+        <Navbar
+            variant="gradient"
+            color="blue-gray"
+            className="mx-auto max-w-screen-xl from-blue-gray-200 to-blue-gray-300 px-4 py-3"
+        >
             <div className="flex items-center justify-between text-blue-gray-900">
                 <Typography
                     as="a"
@@ -495,17 +531,56 @@ export function NavbarWithMegaMenu() {
                     variant="h6"
                     className="mr-4 cursor-pointer py-1.5 lg:ml-2"
                 >
-
+                    CineVerse
                 </Typography>
                 <div className="hidden lg:block">
                     <NavList />
                 </div>
-                <div className="hidden gap-2 lg:flex">
+                {/* <div className="hidden gap-2 lg:flex">
                     <Button variant="text" size="sm" color="blue-gray">
                         Log In
                     </Button>
                     <Button variant="gradient" size="sm">
                         Sign In
+                    </Button>
+                </div> */}
+                <div className="hidden items-center gap-x-2 lg:flex">
+                    <div className="relative flex w-full gap-2 md:w-max">
+                        <Input
+                            type="search"
+                            placeholder="Search"
+                            containerProps={{
+                                className: "min-w-[288px]",
+                            }}
+                            className=" !border-t-blue-gray-300 pl-9 placeholder:text-blue-gray-300 focus:!border-blue-gray-300"
+                            labelProps={{
+                                className: "before:content-none after:content-none",
+                            }}
+                        />
+                        <div className="!absolute left-3 top-[13px]">
+                            <svg
+                                width="13"
+                                height="14"
+                                viewBox="0 0 14 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M9.97811 7.95252C10.2126 7.38634 10.3333 6.7795 10.3333 6.16667C10.3333 4.92899 9.84167 3.742 8.9665 2.86683C8.09133 1.99167 6.90434 1.5 5.66667 1.5C4.42899 1.5 3.242 1.99167 2.36683 2.86683C1.49167 3.742 1 4.92899 1 6.16667C1 6.7795 1.12071 7.38634 1.35523 7.95252C1.58975 8.51871 1.93349 9.03316 2.36683 9.4665C2.80018 9.89984 3.31462 10.2436 3.88081 10.4781C4.447 10.7126 5.05383 10.8333 5.66667 10.8333C6.2795 10.8333 6.88634 10.7126 7.45252 10.4781C8.01871 10.2436 8.53316 9.89984 8.9665 9.4665C9.39984 9.03316 9.74358 8.51871 9.97811 7.95252Z"
+                                    fill="#CFD8DC"
+                                />
+                                <path
+                                    d="M13 13.5L9 9.5M10.3333 6.16667C10.3333 6.7795 10.2126 7.38634 9.97811 7.95252C9.74358 8.51871 9.39984 9.03316 8.9665 9.4665C8.53316 9.89984 8.01871 10.2436 7.45252 10.4781C6.88634 10.7126 6.2795 10.8333 5.66667 10.8333C5.05383 10.8333 4.447 10.7126 3.88081 10.4781C3.31462 10.2436 2.80018 9.89984 2.36683 9.4665C1.93349 9.03316 1.58975 8.51871 1.35523 7.95252C1.12071 7.38634 1 6.7795 1 6.16667C1 4.92899 1.49167 3.742 2.36683 2.86683C3.242 1.99167 4.42899 1.5 5.66667 1.5C6.90434 1.5 8.09133 1.99167 8.9665 2.86683C9.84167 3.742 10.3333 4.92899 10.3333 6.16667Z"
+                                    stroke="#000"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                    <Button size="md" className="rounded-lg ">
+                        Search
                     </Button>
                 </div>
                 <IconButton
@@ -523,14 +598,53 @@ export function NavbarWithMegaMenu() {
             </div>
             <Collapse open={openNav}>
                 <NavList />
-                <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
+                <div className="items-center gap-x-2 flex mb-4">
+                    <div className="relative flex w-full gap-2 md:w-max">
+                        <Input
+                            type="search"
+                            placeholder="Search"
+                            containerProps={{
+                                className: "min-w-[288px]",
+                            }}
+                            className=" !border-t-blue-gray-300 pl-9 placeholder:text-blue-gray-900 focus:!border-blue-gray-300"
+                            labelProps={{
+                                className: "before:content-none after:content-none",
+                            }}
+                        />
+                        <div className="!absolute left-3 top-[13px]">
+                            <svg
+                                width="13"
+                                height="14"
+                                viewBox="0 0 14 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M9.97811 7.95252C10.2126 7.38634 10.3333 6.7795 10.3333 6.16667C10.3333 4.92899 9.84167 3.742 8.9665 2.86683C8.09133 1.99167 6.90434 1.5 5.66667 1.5C4.42899 1.5 3.242 1.99167 2.36683 2.86683C1.49167 3.742 1 4.92899 1 6.16667C1 6.7795 1.12071 7.38634 1.35523 7.95252C1.58975 8.51871 1.93349 9.03316 2.36683 9.4665C2.80018 9.89984 3.31462 10.2436 3.88081 10.4781C4.447 10.7126 5.05383 10.8333 5.66667 10.8333C6.2795 10.8333 6.88634 10.7126 7.45252 10.4781C8.01871 10.2436 8.53316 9.89984 8.9665 9.4665C9.39984 9.03316 9.74358 8.51871 9.97811 7.95252Z"
+                                    fill="#CFD8DC"
+                                />
+                                <path
+                                    d="M13 13.5L9 9.5M10.3333 6.16667C10.3333 6.7795 10.2126 7.38634 9.97811 7.95252C9.74358 8.51871 9.39984 9.03316 8.9665 9.4665C8.53316 9.89984 8.01871 10.2436 7.45252 10.4781C6.88634 10.7126 6.2795 10.8333 5.66667 10.8333C5.05383 10.8333 4.447 10.7126 3.88081 10.4781C3.31462 10.2436 2.80018 9.89984 2.36683 9.4665C1.93349 9.03316 1.58975 8.51871 1.35523 7.95252C1.12071 7.38634 1 6.7795 1 6.16667C1 4.92899 1.49167 3.742 2.36683 2.86683C3.242 1.99167 4.42899 1.5 5.66667 1.5C6.90434 1.5 8.09133 1.99167 8.9665 2.86683C9.84167 3.742 10.3333 4.92899 10.3333 6.16667Z"
+                                    stroke="#000"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                    <Button size="md" className="rounded-lg ">
+                        Search
+                    </Button>
+                </div>
+                {/* <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
                     <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
                         Log In
                     </Button>
                     <Button variant="gradient" size="sm" fullWidth>
                         Sign In
                     </Button>
-                </div>
+                </div> */}
             </Collapse>
         </Navbar>
     );

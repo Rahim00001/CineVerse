@@ -283,7 +283,7 @@ export function NavbarWithMegaMenu() {
         <Navbar
             variant="gradient"
             color="blue-gray"
-            className="mx-auto max-w-screen-xl from-blue-gray-50 to-blue-gray-100 px-4 py-3"
+            className="mx-auto max-w-screen-2xl sticky top-0 z-10 from-blue-gray-50 to-blue-gray-100 px-4 py-3"
         >
 
             {/* navbar for bigger screen */}

@@ -3,7 +3,7 @@ import { NavbarWithMegaMenu } from "../Components/Navbar/NewNavbar";
 
 const Main = () => {
     return (
-        <div>
+        <div className="scroll-smooth">
             <NavbarWithMegaMenu />
             <Outlet></Outlet>
         </div>

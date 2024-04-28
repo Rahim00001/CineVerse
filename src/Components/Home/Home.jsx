@@ -1,8 +1,9 @@
+import Movies from "../Movies/Movies";
 
 const Home = () => {
     return (
         <div>
-            <h2>This is Home</h2>
+            <Movies></Movies>
         </div>
     );
 };

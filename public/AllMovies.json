@@ -36,7 +36,7 @@
         ]
     },
     {
-        "movietitle": "Curry & Cyanide: The Jolly Joseph Case",
+        "movietitle": "Curry & Cyanide",
         "imdbmovieid": "tt30177031",
         "movielanguages": [
             "Malayalam",
@@ -248,25 +248,6 @@
         ],
         "moviegenres": [
             "Drama"
-        ]
-    },
-    {
-        "movietitle": "LILYTH",
-        "imdbmovieid": "tt29865751",
-        "movielanguages": [
-            "Kannada",
-            "Telugu",
-            "Tamil",
-            "Hindi",
-            "English",
-            "Malayalam"
-        ],
-        "moviecountries": [
-            "India"
-        ],
-        "moviemainphotos": [],
-        "moviegenres": [
-            "Thriller"
         ]
     },
     {
@@ -1988,28 +1969,6 @@
         ]
     },
     {
-        "movietitle": "Mahanadhi",
-        "imdbmovieid": "tt2486260",
-        "movielanguages": [
-            "Kannada",
-            "Telugu",
-            "Tamil",
-            "Malayalam",
-            "Hindi"
-        ],
-        "moviecountries": [
-            "India"
-        ],
-        "moviemainphotos": [
-            "https://m.media-amazon.com/images/M/MV5BNGE3YTQxMDgtZGMxYy00ODNmLTg4YzctYmVkODBmNWUxYjhhXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_QL75_UX500_CR0,0,500,281_.jpg"
-        ],
-        "moviegenres": [
-            "Drama",
-            "Family",
-            "History"
-        ]
-    },
-    {
         "movietitle": "Chaarulatha",
         "imdbmovieid": "tt3144084",
         "movielanguages": [
@@ -2548,6 +2507,47 @@
         "moviegenres": [
             "Comedy",
             "Thriller"
+        ]
+    },
+    {
+        "movietitle": "LILYTH",
+        "imdbmovieid": "tt29865751",
+        "movielanguages": [
+            "Kannada",
+            "Telugu",
+            "Tamil",
+            "Hindi",
+            "English",
+            "Malayalam"
+        ],
+        "moviecountries": [
+            "India"
+        ],
+        "moviemainphotos": [],
+        "moviegenres": [
+            "Thriller"
+        ]
+    },
+    {
+        "movietitle": "Mahanadhi",
+        "imdbmovieid": "tt2486260",
+        "movielanguages": [
+            "Kannada",
+            "Telugu",
+            "Tamil",
+            "Malayalam",
+            "Hindi"
+        ],
+        "moviecountries": [
+            "India"
+        ],
+        "moviemainphotos": [
+            "https://m.media-amazon.com/images/M/MV5BNGE3YTQxMDgtZGMxYy00ODNmLTg4YzctYmVkODBmNWUxYjhhXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_QL75_UX500_CR0,0,500,281_.jpg"
+        ],
+        "moviegenres": [
+            "Drama",
+            "Family",
+            "History"
         ]
     }
 ]

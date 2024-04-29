@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import { Button } from "@material-tailwind/react";
 import geners from "../../../public/Geners.json";
-import { Input } from "@material-tailwind/react";
+import countries from "../../../public/Countries.json";
+import languages from "../../../public/Languages.json";
+import { Input, Select, Option } from "@material-tailwind/react";
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [moviesLength, setMoviesLength] = useState(30);
     const [genreFilter, setGenreFilter] = useState(null);
+    const [selectedLanguage, setSelectedLanguage] = useState('');
+    const [selectedCountry, setSelectedCountry] = useState('');
     const [search, setSearch] = useState('');
 
     useEffect(() => {
@@ -17,11 +21,13 @@ const Movies = () => {
             .catch(error => console.error('Error fetching movies:', error));
     }, []);
 
-    // Function for filtering movies based on search and geners
+    // Function for filtering movies based on search, genres, language, and country
     const applyFilters = (movie) => {
         const titleMatchesSearch = search === '' || movie.movietitle.toLowerCase().includes(search.toLowerCase());
         const genreMatchesFilter = !genreFilter || movie.moviegenres.includes(genreFilter);
-        return titleMatchesSearch && genreMatchesFilter;
+        const languageMatchesFilter = !selectedLanguage || selectedLanguage === "" || movie.movielanguages.includes(selectedLanguage);
+        const countryMatchesFilter = !selectedCountry || selectedCountry === "" || movie.moviecountries.includes(selectedCountry);
+        return titleMatchesSearch && genreMatchesFilter && languageMatchesFilter && countryMatchesFilter;
     };
 
     // Function to update genre filter
@@ -38,16 +44,46 @@ const Movies = () => {
                         key={index}
                         onClick={() => handleGenreFilterChange(genre)}
                         color={genre === genreFilter ? "red" : "gray"}
-                        ripple={true}
-                        variant="outline">
+                        ripple={true}>
                         {genre}
                     </Button>
                 ))}
             </div>
-            {/* Search input field */}
-            <div className="flex justify-center mb-4">
-                <div className="w-72">
-                    <Input onChange={(e) => setSearch(e.target.value)} color="white" label="Search Movie" />
+            <div className="grid grid-cols-3 gap-3 mb-4 max-w-screen-2xl mx-auto">
+                {/* Country select field */}
+                <Select
+                    size="md"
+                    color="blue-gray"
+                    label="Select Country"
+                    value={selectedCountry}
+                    onChange={(e) => {
+                        console.log(e); // Output the event object to the console
+                        setSelectedCountry(e);
+                    }}
+                >
+                    <Option value="">All</Option>
+                    {countries.map(({ name }) => (
+                        <Option key={name} value={name}>{name}</Option>
+                    ))}
+                </Select>
+
+                {/* Language select field */}
+                <Select
+                    size="md"
+                    color="blue-gray"
+                    label="Select Language"
+                    value={selectedLanguage}
+                    onChange={(e) => setSelectedLanguage(e)}
+                >
+                    <Option value="">All</Option>
+                    {languages.map(({ language }) => (
+                        <Option key={language} value={language}>{language}</Option>
+                    ))}
+                </Select>
+
+                {/* Search input field */}
+                <div className="">
+                    <Input onChange={(e) => setSearch(e.target.value)} color="blue-gray" label="Search Movie" />
                 </div>
             </div>
             {/* Display filtered movies */}

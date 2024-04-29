@@ -1,11 +1,10 @@
 import "./Movies.css"
 import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
-import { Button } from "@material-tailwind/react";
 import geners from "../../../public/Geners.json";
 import countries from "../../../public/Countries.json";
 import languages from "../../../public/Languages.json";
-import { Input, Select, Option } from "@material-tailwind/react";
+import { Input, Select, Option, Button } from "@material-tailwind/react";
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
@@ -97,7 +96,7 @@ const Movies = () => {
                     ))}
             </div>
             {/* Button to see all movies */}
-            <div className={moviesLength === movies.length || movies.filter(applyFilters).length <= 30 ? 'hidden' : 'flex justify-center'}>
+            <div className={moviesLength === movies.length || movies.filter(applyFilters).length <= 30 ? 'hidden' : 'flex justify-center mb-5'}>
                 <Button
                     onClick={() => setMoviesLength(movies.length)}
                     ripple={true}

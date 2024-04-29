@@ -49,7 +49,7 @@ const Movies = () => {
                     </Button>
                 ))}
             </div>
-            <div className="grid grid-cols-3 gap-3 mb-4 max-w-screen-2xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4 max-w-screen-2xl mx-auto">
                 {/* Country select field */}
                 <Select
                     size="md"
@@ -82,7 +82,7 @@ const Movies = () => {
                 </Select>
 
                 {/* Search input field */}
-                <div className="">
+                <div className="col-span-2 md:col-span-1 flex justify-center md:justify-start">
                     <Input onChange={(e) => setSearch(e.target.value)} color="blue-gray" label="Search Movie" />
                 </div>
             </div>

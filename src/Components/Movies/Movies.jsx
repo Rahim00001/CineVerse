@@ -1,3 +1,4 @@
+import "./Movies.css"
 import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import { Button } from "@material-tailwind/react";
@@ -87,7 +88,7 @@ const Movies = () => {
                 </div>
             </div>
             {/* Display filtered movies */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mx-auto max-w-screen-2xl">
+            <div className="movies-container mx-auto max-w-screen-2xl">
                 {movies
                     .filter(applyFilters)
                     .slice(0, moviesLength)

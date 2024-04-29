@@ -35,6 +35,14 @@ const Movies = () => {
         setGenreFilter(genre);
     };
 
+    // Function to render message when no movies match the filters
+    const renderNoMoviesMessage = () => {
+        if (movies.filter(applyFilters).length === 0) {
+            return <div className="text-xl text-center text-gray-500 mt-8">No movies found.</div>;
+        }
+        return null;
+    };
+
     return (
         <div className="px-2 mx-auto">
             {/* Genre filter buttons */}
@@ -94,6 +102,8 @@ const Movies = () => {
                     .map((movie) => (
                         <MovieCard key={movie.imdbmovieid} movie={movie}></MovieCard>
                     ))}
+                {/* no movies found message */}
+                {renderNoMoviesMessage()}
             </div>
             {/* Button to see all movies */}
             <div className={moviesLength === movies.length || movies.filter(applyFilters).length <= 30 ? 'hidden' : 'flex justify-center mb-5'}>

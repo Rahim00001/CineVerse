@@ -17,3 +17,17 @@
     color:  #fff;
     background-color: #060417;
   }
+
+  /* ----------Custom Scrollbar----------- */
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #0f0b33;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, #19142b -50%, #1e143f 50%);
+  border-radius: 10px;
+}

@@ -1,8 +1,13 @@
-# React + Vite
+# CineVerse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineVerse: The ultimate movie universe. Here you can find 100+ letest movies.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key Features:
+- Elegent webpage with 100 movies
+- Dynamic movie detiles page
+- Search functionality
+- Movie filtering based on genres
+- Movie filtering based on languages
+- Movie filtering based on countries
+- Fully responsive for mobile, tablet and desktop
+- [Live Link](https://cineverseweb.netlify.app)

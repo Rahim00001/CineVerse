@@ -1,4 +1,4 @@
-import logo from "../../../public/movie.png"
+import logo from "../../../public/logo.png"
 import {
     Navbar,
     Typography,

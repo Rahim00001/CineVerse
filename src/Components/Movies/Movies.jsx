@@ -14,6 +14,7 @@ const Movies = () => {
     const [selectedCountry, setSelectedCountry] = useState('');
     const [search, setSearch] = useState('');
 
+    // Load movies data
     useEffect(() => {
         fetch('AllMovies.json')
             .then(res => res.json())
@@ -57,6 +58,8 @@ const Movies = () => {
                     </Button>
                 ))}
             </div>
+
+            {/* Country, language and search field */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4 max-w-screen-2xl mx-auto">
                 {/* Country select field */}
                 <Select
@@ -65,7 +68,7 @@ const Movies = () => {
                     label="Select Country"
                     value={selectedCountry}
                     onChange={(e) => {
-                        console.log(e); // Output the event object to the console
+                        console.log(e);
                         setSelectedCountry(e);
                     }}
                 >
@@ -94,6 +97,7 @@ const Movies = () => {
                     <Input onChange={(e) => setSearch(e.target.value)} color="blue-gray" label="Search Movie" />
                 </div>
             </div>
+
             {/* Display filtered movies */}
             <div className="movies-container mx-auto max-w-screen-2xl">
                 {movies
@@ -105,6 +109,7 @@ const Movies = () => {
                 {/* no movies found message */}
                 {renderNoMoviesMessage()}
             </div>
+
             {/* Button to see all movies */}
             <div className={moviesLength === movies.length || movies.filter(applyFilters).length <= 30 ? 'hidden' : 'flex justify-center mb-5'}>
                 <Button
